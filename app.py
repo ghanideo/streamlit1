@@ -123,8 +123,6 @@ if st.button("Predict"):
     predict = dt_model.predict(selected_data)
     predict = sleep_dis_lib[predict[0]]
     st.write(f"Sleep Disorder: **{predict}**")
-    st.write(f"{list(selected_data)}")
-    st.write(f"{list(scale_data)}")
     
 
 
