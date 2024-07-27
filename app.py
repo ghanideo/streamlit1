@@ -2,19 +2,21 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import pickle
+import os
+import sys
 
 st.write("""
 ## Prediksi Kualitas Tidur Mahasiswa
 """)
 
 # Load Model
-with open('scaler.pkl', 'rb') as file:
+with open(f'{os.path.dirname(os.path.abspath(sys.argv[0]))}/scaler.pkl', 'rb') as file:
     scaler = pickle.load(file)
 
-with open('rfe.pkl', 'rb') as file:
+with open(f'{os.path.dirname(os.path.abspath(sys.argv[0]))}/rfe.pkl', 'rb') as file:
     rfe_selector = pickle.load(file)
 
-with open('dt_model.pkl', 'rb') as file:
+with open(f'{os.path.dirname(os.path.abspath(sys.argv[0]))}/dt_model.pkl', 'rb') as file:
     dt_model = pickle.load(file)
 
 occup_lib = {
